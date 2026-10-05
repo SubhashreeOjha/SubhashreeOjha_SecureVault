@@ -1,0 +1,2063 @@
+/* =========================================================
+   SECUREVAULT - VAULT PAGE
+   Professional compact SaaS UI
+   CSS ONLY - NO FUNCTIONALITY CHANGES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.vault-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f4f7fb;
+  color: #172033;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.vault-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 268px;
+  height: 100vh;
+  padding: 26px 16px 22px;
+  display: flex;
+  flex-direction: column;
+  background: #111827;
+  color: #fff;
+  z-index: 20;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 9px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.sidebar-logo {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #4f46e5;
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(79, 70, 229, 0.28);
+}
+
+.sidebar-logo svg {
+  width: 21px;
+  height: 21px;
+}
+
+.sidebar-brand h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+
+.sidebar-brand p {
+  margin: 3px 0 0;
+  color: #9ca8bc;
+  font-size: 10px;
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 22px;
+}
+
+.sidebar-button {
+  position: relative;
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #aeb9cb;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.sidebar-button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sidebar-button.active {
+  color: #fff;
+  background: rgba(79, 70, 229, 0.24);
+  border-color: rgba(129, 140, 248, 0.22);
+}
+
+.sidebar-button.active::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 9px;
+  width: 3px;
+  height: 26px;
+  border-radius: 0 3px 3px 0;
+  background: #818cf8;
+}
+
+.sidebar-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+}
+
+.sidebar-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Sidebar security card */
+
+.sidebar-security {
+  margin-top: auto;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.security-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 11px;
+  border-radius: 9px;
+  background: rgba(79, 70, 229, 0.18);
+  color: #a5b4fc;
+}
+
+.security-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.sidebar-security h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.sidebar-security p {
+  margin: 7px 0 12px;
+  color: #8e9bb0;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.security-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #9aa7ba;
+  font-size: 9px;
+}
+
+.security-dot,
+.status-dot {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.security-dot {
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.08);
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.vault-main {
+  width: calc(100% - 268px);
+  min-height: 100vh;
+  margin-left: 268px;
+}
+
+.vault-topbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  background: #fff;
+  border-bottom: 1px solid #e8ebf1;
+}
+
+.vault-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid #e1e6ee;
+  border-radius: 999px;
+  background: #fff;
+  color: #344054;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.vault-status .status-dot {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+}
+
+.vault-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 28px 32px 50px;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.vault-title-section {
+  min-height: 136px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 28px 30px;
+  border: 1px solid #e2e7ef;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.035);
+}
+
+.vault-title-section h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.9px;
+}
+
+.vault-title-section p {
+  margin: 8px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.add-button {
+  flex: 0 0 auto;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 10px;
+  background: #4f46e5;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 9px 20px rgba(79, 70, 229, 0.2);
+  transition: 0.18s ease;
+}
+
+.add-button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   TOOLBAR
+   ========================================================= */
+
+.vault-toolbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 13px;
+  flex-wrap: wrap;
+}
+
+/* Search */
+
+.search-box {
+  position: relative;
+  flex: 1 1 300px;
+  min-width: 240px;
+  height: 40px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 40px;
+  padding: 0 13px 0 38px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #fff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 11px;
+  outline: none;
+  transition: 0.18s ease;
+}
+
+.search-box input::placeholder {
+  color: #98a2b3;
+}
+
+.search-box input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.09);
+}
+
+.search-icon {
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #667085;
+  pointer-events: none;
+}
+
+.search-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Filters */
+
+.vault-toolbar select {
+  height: 40px;
+  min-width: 125px;
+  padding: 0 30px 0 11px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #fff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  outline: none;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.vault-toolbar select:hover {
+  border-color: #c7cde0;
+}
+
+.vault-toolbar select:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+
+/* Favorite + share */
+
+.filter-button,
+.share-button {
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 13px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.filter-button {
+  border: 1px solid #dfe4ec;
+  background: #fff;
+  color: #475467;
+}
+
+.filter-button:hover {
+  border-color: #c7d2fe;
+  background: #f8f9ff;
+}
+
+.filter-button.active {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.share-button {
+  border: 1px solid #4f46e5;
+  background: #4f46e5;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.14);
+}
+
+.share-button:hover {
+  border-color: #4338ca;
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   CREDENTIAL GRID
+   ========================================================= */
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.credential-card {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid #e1e6ee;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.035);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.credential-card:hover {
+  transform: translateY(-2px);
+  border-color: #d5daf0;
+  box-shadow: 0 11px 27px rgba(15, 23, 42, 0.065);
+}
+
+/* Card header */
+
+.credential-card-header {
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.credential-title-area {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.credential-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.credential-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.credential-title-area > div:last-child {
+  min-width: 0;
+}
+
+.credential-title-area h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.credential-category {
+  display: block;
+  margin-top: 4px;
+  color: #98a2b3;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+/* Favorite */
+
+.favorite-button {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #dfe4ec;
+  border-radius: 8px;
+  background: #fff;
+  color: #98a2b3;
+  font-size: 17px;
+  line-height: 1;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.favorite-button:hover {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.favorite-button.active {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+/* =========================================================
+   CREDENTIAL DETAILS
+   ========================================================= */
+
+.credential-details {
+  padding: 11px 0 5px;
+}
+
+.credential-detail-row {
+  min-height: 26px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 4px 0;
+}
+
+.credential-detail-row > span {
+  flex: 0 0 70px;
+  color: #98a2b3;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.credential-detail-row > strong {
+  min-width: 0;
+  color: #344054;
+  font-size: 10px;
+  font-weight: 650;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.credential-detail-row > a {
+  min-width: 0;
+  color: #4f46e5;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.credential-detail-row > a:hover {
+  text-decoration: underline;
+}
+
+/* Tags */
+
+.credential-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 7px;
+}
+
+.credential-tags span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #f2f4f7;
+  color: #667085;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   CARD ACTIONS
+   ========================================================= */
+
+.credential-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 9px;
+  padding-top: 9px;
+  border-top: 1px solid #f0f1f4;
+}
+
+.edit-button,
+.share-card-button,
+.delete-button,
+.view-button,
+.security-action {
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.edit-button {
+  border: 1px solid transparent;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.edit-button:hover {
+  background: #e0e7ff;
+}
+
+.share-card-button {
+  border: 1px solid #dfe4ec;
+  background: #fff;
+  color: #344054;
+}
+
+.share-card-button:hover {
+  border-color: #c7d2fe;
+  background: #f8f9ff;
+  color: #4338ca;
+}
+
+.delete-button {
+  border: 1px solid transparent;
+  background: #fff0f1;
+  color: #dc2626;
+}
+
+.delete-button:hover {
+  background: #ffe4e6;
+}
+
+.view-button {
+  border: 1px solid #dfe4ec;
+  background: #fff;
+  color: #344054;
+}
+
+.view-button:hover {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.edit-button:disabled,
+.share-card-button:disabled,
+.delete-button:disabled,
+.view-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.credential-form-card,
+.form-card {
+  margin-bottom: 22px;
+  padding: 22px 24px;
+  border: 1px solid #e2e7ef;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.045);
+}
+
+.form-heading {
+  margin-bottom: 17px;
+}
+
+.form-heading h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.25px;
+}
+
+.form-heading p {
+  margin: 4px 0 0;
+  color: #667085;
+  font-size: 11px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px 15px;
+}
+
+.vault-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vault-field label {
+  color: #344054;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.vault-field input,
+.vault-field textarea,
+.vault-field select {
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 10px;
+  border: 1px solid #dfe4ec;
+  border-radius: 8px;
+  background: #fff;
+  color: #172033;
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+  transition: 0.18s ease;
+}
+
+.vault-field textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.vault-field input:focus,
+.vault-field textarea:focus,
+.vault-field select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.09);
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   PASSWORD GENERATOR
+   ========================================================= */
+
+.password-main-field {
+  min-width: 0;
+}
+
+.password-generator-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+.password-length-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #475467;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.password-length-row span:last-child {
+  color: #4f46e5;
+  font-weight: 800;
+}
+
+.password-length-slider {
+  width: 100% !important;
+  height: 4px !important;
+  min-height: 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+.character-types-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.generator-label {
+  flex: 0 0 auto;
+  color: #344054;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.character-options {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px 12px;
+}
+
+.character-option {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 5px !important;
+  margin: 0 !important;
+  color: #475467 !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+}
+
+.character-option input[type="checkbox"] {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid #c7ced9 !important;
+  border-radius: 3px !important;
+  background: #fff !important;
+  position: relative !important;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.character-option input[type="checkbox"]:checked {
+  border-color: #4f46e5 !important;
+  background: #4f46e5 !important;
+}
+
+.character-option input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  left: 4px;
+  top: 2px;
+  border: solid #fff;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+}
+
+.generate-password-button {
+  width: 100%;
+  height: 34px;
+  min-height: 34px !important;
+  margin-top: 2px;
+  padding: 0 10px;
+  border: 1px solid #dfe3eb;
+  border-radius: 7px;
+  background: #f6f7f9;
+  color: #344054;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.generate-password-button:hover {
+  background: #eef0f5;
+  border-color: #cfd5df;
+}
+
+.password-strength-compact {
+  padding-top: 2px;
+  color: #475467;
+  font-size: 9px;
+}
+
+.password-strength-compact > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.password-strength-compact strong {
+  color: #344054;
+  font-size: 10px;
+}
+
+.password-strength-compact span {
+  color: #667085;
+  font-size: 9px;
+}
+
+.password-strength-compact p {
+  margin: 3px 0 0;
+  color: #667085;
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.cancel-button,
+.save-button {
+  height: 35px;
+  min-height: 35px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.cancel-button {
+  background: #f2f4f7;
+  color: #475467;
+}
+
+.cancel-button:hover {
+  background: #e9ecf1;
+}
+
+.save-button {
+  background: #111827;
+  color: #fff;
+}
+
+.save-button:hover:not(:disabled) {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   EMPTY / LOADING
+   ========================================================= */
+
+.empty-state,
+.loading-state {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px;
+  border: 1px dashed #d7dee8;
+  border-radius: 14px;
+  background: #fff;
+  color: #98a2b3;
+  text-align: center;
+}
+
+.empty-state h3,
+.empty-state h4 {
+  margin: 0;
+  color: #344054;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.empty-state p {
+  margin: 0;
+  color: #98a2b3;
+  font-size: 10px;
+}
+
+.empty-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 3px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.empty-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.empty-add-button {
+  height: 36px;
+  margin-top: 5px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: #fff;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.empty-add-button:hover {
+  background: #4338ca;
+}
+
+/* =========================================================
+   SHARED SECTIONS
+   ========================================================= */
+
+.content-section,
+.credentials-section,
+.security-section {
+  width: 100%;
+}
+
+.section-header-row,
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.section-heading h3,
+.section-header-row h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.section-heading p,
+.section-header-row p {
+  margin: 4px 0 0;
+  color: #667085;
+  font-size: 11px;
+}
+
+/* =========================================================
+   TEAM
+   ========================================================= */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.team-card {
+  padding: 18px;
+  border: 1px solid #e1e6ee;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.035);
+  transition: 0.18s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-2px);
+  border-color: #d5daf0;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+}
+
+.team-card-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 16px;
+}
+
+.team-icon,
+.team-card-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.team-icon svg,
+.team-card-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.team-card h3,
+.team-card-content h3 {
+  margin: 0;
+  color: #172033;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.team-card p,
+.team-card-content p {
+  margin: 4px 0 0;
+  color: #98a2b3;
+  font-size: 9px;
+}
+
+.team-card .view-button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.team-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.team-actions {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.back-button {
+  height: 35px;
+  padding: 0 12px;
+  border: none;
+  border-radius: 8px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: #e0e7ff;
+}
+
+.team-members-section,
+.team-credentials-section,
+.team-members-container {
+  margin-top: 18px;
+}
+
+.members-list,
+.team-members-list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e1e6ee;
+  border-radius: 13px;
+  background: #fff;
+}
+
+.member-row,
+.team-member-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #eef0f4;
+}
+
+.member-row:last-child,
+.team-member-row:last-child {
+  border-bottom: none;
+}
+
+.member-info {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.member-avatar {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.member-info > div:last-child {
+  min-width: 0;
+}
+
+.member-info strong {
+  display: block;
+  color: #172033;
+  font-size: 11px;
+}
+
+.member-info span {
+  display: block;
+  margin-top: 3px;
+  color: #98a2b3;
+  font-size: 9px;
+}
+
+.permission-badge {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #f2f4f7;
+  color: #475467;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   SECURITY
+   ========================================================= */
+
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.security-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid #e1e6ee;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.035);
+}
+
+.security-card-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.security-card h4 {
+  margin: 0;
+  color: #172033;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.security-card p {
+  margin: 4px 0 0;
+  color: #98a2b3;
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+.security-action {
+  margin-left: auto;
+  flex: 0 0 auto;
+  border: 1px solid #dfe4ec;
+  background: #fff;
+  color: #475467;
+}
+
+.security-action:hover {
+  border-color: #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+/* =========================================================
+   SHARED CARDS
+   ========================================================= */
+
+.shared-card {
+  position: relative;
+}
+
+.shared-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  bottom: 15px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #818cf8;
+}
+
+/* =========================================================
+   TEAM EMPTY
+   ========================================================= */
+
+.empty-small {
+  padding: 18px;
+  border: 1px dashed #d7dee8;
+  border-radius: 10px;
+  background: #fff;
+  color: #98a2b3;
+  font-size: 10px;
+  text-align: center;
+}
+
+/* =========================================================
+   GENERAL LINKS / INPUTS
+   ========================================================= */
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(99, 102, 241, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .vault-sidebar {
+    width: 235px;
+  }
+
+  .vault-main {
+    width: calc(100% - 235px);
+    margin-left: 235px;
+  }
+
+  .vault-container {
+    padding: 24px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 950px) {
+  .credentials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vault-toolbar {
+    align-items: stretch;
+  }
+
+  .search-box {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .vault-page {
+    display: block;
+  }
+
+  .vault-sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .sidebar-menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .sidebar-button {
+    width: auto;
+    flex: 1 1 150px;
+  }
+
+  .sidebar-button.active::before {
+    display: none;
+  }
+
+  .sidebar-security {
+    display: none;
+  }
+
+  .vault-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .vault-topbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .vault-container {
+    padding: 20px;
+  }
+
+  .vault-title-section {
+    min-height: auto;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading,
+  .section-header-row,
+  .team-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .team-actions {
+    width: 100%;
+  }
+
+  .team-actions .add-button {
+    flex: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .vault-container {
+    padding: 14px;
+  }
+
+  .vault-title-section {
+    padding: 20px;
+    border-radius: 14px;
+  }
+
+  .vault-title-section h2 {
+    font-size: 24px;
+  }
+
+  .vault-title-section .add-button {
+    width: 100%;
+  }
+
+  .credential-form-card,
+  .form-card {
+    padding: 17px;
+  }
+
+  .vault-toolbar select,
+  .filter-button,
+  .share-button {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .credential-card {
+    padding: 15px;
+  }
+
+  .credential-actions {
+    justify-content: flex-start;
+  }
+
+  .credential-actions button {
+    flex: 1;
+  }
+
+  .character-types-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .character-options {
+    justify-content: flex-start;
+  }
+
+  .security-card {
+    align-items: flex-start;
+  }
+
+  .security-action {
+    margin-left: auto;
+  }
+}
+/* =========================================================
+   ADD CREDENTIAL - FINAL POLISH
+   ========================================================= */
+
+/* Keep the form compact and balanced */
+.credential-form-card {
+  padding: 24px 26px;
+  border-radius: 17px;
+  background: #ffffff;
+  border: 1px solid #e1e6ef;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.045);
+}
+
+/* Two balanced columns */
+.credential-form-card .form-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  column-gap: 18px;
+  row-gap: 13px;
+  align-items: start;
+}
+
+/* ---------------------------------------------------------
+   FIELD POSITIONS
+
+   Left:
+   Title
+   Password
+   Credential Type
+   Website
+
+   Right:
+   Username
+   Category
+   Notes
+   Tags
+   --------------------------------------------------------- */
+
+.credential-form-card .form-grid > .vault-field:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2 / span 2;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(5) {
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(6) {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(7) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(8) {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+/* ---------------------------------------------------------
+   PASSWORD GENERATOR PANEL
+   --------------------------------------------------------- */
+
+.password-main-field {
+  position: relative;
+}
+
+.password-generator-options {
+  margin-top: 9px;
+  padding: 12px 13px 13px;
+  border: 1px solid #e1e5f0;
+  border-radius: 12px;
+  background: linear-gradient(
+    145deg,
+    #fafbff 0%,
+    #f6f7ff 100%
+  );
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.9),
+    0 4px 12px rgba(79,70,229,.045);
+}
+
+/* Password length */
+
+.password-length-row {
+  margin-bottom: 6px;
+  color: #475467;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.password-length-row span:last-child {
+  min-width: 30px;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: #e9e7ff;
+  color: #4f46e5;
+  text-align: center;
+}
+
+/* Slider */
+
+.password-length-slider {
+  height: 5px !important;
+  margin-bottom: 10px !important;
+  border-radius: 10px;
+  accent-color: #4f46e5;
+}
+
+/* Character types */
+
+.character-types-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.generator-label {
+  color: #475467;
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.character-options {
+  gap: 6px 9px;
+}
+
+.character-option {
+  padding: 4px 6px !important;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  transition: .15s ease;
+}
+
+.character-option:hover {
+  background: #ffffff;
+  border-color: #e0e4ee;
+}
+
+/* ---------------------------------------------------------
+   GENERATE PASSWORD BUTTON
+   --------------------------------------------------------- */
+
+.generate-password-button {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 5px;
+  padding: 0 15px;
+
+  border: 1px solid #4f46e5;
+  border-radius: 9px;
+
+  background: linear-gradient(
+    135deg,
+    #5b55e8 0%,
+    #4338ca 100%
+  );
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 14px rgba(79,70,229,.22),
+    inset 0 1px 0 rgba(255,255,255,.2);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    background .18s ease;
+}
+
+.generate-password-button svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  stroke: currentColor;
+}
+
+.generate-password-button:hover {
+  background: linear-gradient(
+    135deg,
+    #6366f1 0%,
+    #4f46e5 100%
+  );
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 20px rgba(79,70,229,.30),
+    inset 0 1px 0 rgba(255,255,255,.22);
+}
+
+.generate-password-button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 4px 9px rgba(79,70,229,.20);
+}
+
+/* ---------------------------------------------------------
+   PASSWORD STRENGTH
+   --------------------------------------------------------- */
+
+.password-strength-panel {
+  margin-top: 10px;
+  padding: 11px 12px;
+
+  border: 1px solid #dce2f1;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(15,23,42,.04);
+}
+
+.strength-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.strength-header strong {
+  color: #344054;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.strength-header span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+/* Strength labels */
+
+.strength-strong {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.strength-medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.strength-weak {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Six-point meter */
+
+.strength-meter {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  margin-bottom: 7px;
+}
+
+.strength-segment {
+  height: 5px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: .2s ease;
+}
+
+.strength-segment.active {
+  background: #4f46e5;
+}
+
+.strength-score {
+  color: #667085;
+  font-size: 9px;
+}
+
+.strength-score strong {
+  color: #344054;
+}
+
+/* Requirement checks */
+
+.strength-checks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px 8px;
+  margin-top: 9px;
+}
+
+.strength-checks span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #98a2b3;
+  font-size: 8px;
+  font-weight: 650;
+}
+
+.strength-checks span svg {
+  width: 12px;
+  height: 12px;
+  flex: 0 0 12px;
+  color: #c4cad4;
+}
+
+.strength-checks span.passed {
+  color: #15803d;
+}
+
+.strength-checks span.passed svg {
+  color: #22c55e;
+}
+
+/* ---------------------------------------------------------
+   SUGGESTIONS - MAKE THEM NOTICEABLE
+   --------------------------------------------------------- */
+
+.strength-suggestions-text {
+  position: relative;
+
+  margin: 9px 0 0;
+  padding: 8px 10px 8px 28px;
+
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+
+  background: #fffbeb;
+  color: #92400e;
+
+  font-size: 9px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.strength-suggestions-text::before {
+  content: "!";
+  position: absolute;
+  left: 9px;
+  top: 8px;
+
+  width: 13px;
+  height: 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f59e0b;
+  color: #ffffff;
+
+  font-size: 8px;
+  font-weight: 900;
+}
+
+/* ---------------------------------------------------------
+   NOTES + TAGS - COMPACT
+   --------------------------------------------------------- */
+
+.credential-form-card .form-grid > .vault-field:nth-child(7) textarea {
+  min-height: 55px;
+  height: 55px;
+  resize: none;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(8) input {
+  height: 38px;
+}
+
+/* Make these right-side fields visually compact */
+.credential-form-card .form-grid > .vault-field:nth-child(7),
+.credential-form-card .form-grid > .vault-field:nth-child(8) {
+  padding: 10px 11px;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.credential-form-card .form-grid > .vault-field:nth-child(7) label,
+.credential-form-card .form-grid > .vault-field:nth-child(8) label {
+  color: #475467;
+}
+
+/* ---------------------------------------------------------
+   SAVE / CANCEL
+   --------------------------------------------------------- */
+
+.form-actions {
+  margin-top: 17px;
+  padding-top: 13px;
+  border-top: 1px solid #edf0f4;
+}
+
+.save-button {
+  min-width: 128px;
+  height: 38px;
+  background: #111827;
+  box-shadow: 0 5px 12px rgba(15,23,42,.12);
+}
+
+.save-button:hover:not(:disabled) {
+  background: #1f2937;
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  height: 38px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .credential-form-card .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credential-form-card .form-grid > .vault-field {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  .credential-form-card .form-grid > .vault-field:nth-child(7),
+  .credential-form-card .form-grid > .vault-field:nth-child(8) {
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  .character-types-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .character-options {
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,140 @@
+.recovery-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  background: #f4f7fb;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.recovery-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 38px;
+  border: 1px solid #e2e7ef;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+.recovery-brand {
+  margin-bottom: 28px;
+}
+
+.recovery-logo {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 14px;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.recovery-brand h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.recovery-brand p {
+  margin: 7px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+.recovery-message {
+  margin-bottom: 18px;
+  padding: 11px 13px;
+  border: 1px solid #c7d2fe;
+  border-radius: 9px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.recovery-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.recovery-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.recovery-field label {
+  color: #344054;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.recovery-field input {
+  width: 100%;
+  height: 43px;
+  padding: 0 12px;
+  border: 1px solid #dfe4ec;
+  border-radius: 9px;
+  background: #fff;
+  color: #172033;
+  font-size: 12px;
+  outline: none;
+}
+
+.recovery-field input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.09);
+}
+
+.recovery-button {
+  height: 44px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 9px;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 9px 22px rgba(79, 70, 229, 0.2);
+  transition: 0.18s ease;
+}
+
+.recovery-button:hover {
+  background: #4338ca;
+  transform: translateY(-1px);
+}
+
+.recovery-back {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.recovery-back a {
+  color: #4f46e5;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.recovery-back a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 520px) {
+  .recovery-page {
+    padding: 18px;
+  }
+
+  .recovery-card {
+    padding: 28px 22px;
+  }
+}
