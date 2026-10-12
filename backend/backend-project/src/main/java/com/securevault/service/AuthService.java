@@ -1,0 +1,3 @@
+package com.securevault.service;
+import com.securevault.entity.*;import com.securevault.repository.UserRepository;import org.springframework.security.crypto.password.PasswordEncoder;import org.springframework.stereotype.Service;
+@Service public class AuthService{private final UserRepository users;private final PasswordEncoder pe;public AuthService(UserRepository u,PasswordEncoder p){users=u;pe=p;}public User register(String name,String email,String password){if(password==null||password.length()<8)throw new RuntimeException("Password must be at least 8 characters");if(users.findByEmail(email).isPresent())throw new RuntimeException("Email already registered");User u=new User(name,email,pe.encode(password));return users.save(u);}}

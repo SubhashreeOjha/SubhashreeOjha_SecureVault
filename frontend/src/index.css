@@ -1,0 +1,158 @@
+/* =========================================================
+   SECUREVAULT - GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #172033;
+  background: #f5f7fb;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --sv-primary: #4f46e5;
+  --sv-primary-dark: #4338ca;
+  --sv-primary-soft: #eef2ff;
+
+  --sv-bg: #f5f7fb;
+  --sv-surface: #ffffff;
+  --sv-border: #e6e9f0;
+
+  --sv-text: #172033;
+  --sv-text-secondary: #667085;
+  --sv-text-muted: #98a2b3;
+
+  --sv-success: #16a34a;
+  --sv-danger: #dc2626;
+  --sv-warning: #d97706;
+
+  --sv-radius: 14px;
+
+  --sv-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.05);
+
+  --sv-shadow-lg:
+    0 18px 50px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--sv-bg);
+  color: var(--sv-text);
+  font-family: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+::selection {
+  background: #c7d2fe;
+  color: #1e1b4b;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd0dc;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aeb5c4;
+}
+
+/* Focus */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+/* Utility */
+
+.hidden {
+  display: none !important;
+}
+
+.text-muted {
+  color: var(--sv-text-muted);
+}
+
+.text-danger {
+  color: var(--sv-danger);
+}
+
+.text-success {
+  color: var(--sv-success);
+}
+
+.text-warning {
+  color: var(--sv-warning);
+}

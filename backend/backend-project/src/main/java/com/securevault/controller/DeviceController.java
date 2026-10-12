@@ -1,0 +1,3 @@
+package com.securevault.controller;
+import com.securevault.repository.UserRepository;import com.securevault.service.DeviceService;import com.securevault.service.SecurityMonitoringService;import org.springframework.security.core.Authentication;import org.springframework.web.bind.annotation.*;
+@RestController @RequestMapping("/api/devices") @CrossOrigin(origins="http://localhost:5173") public class DeviceController{private final UserRepository users;private final SecurityMonitoringService monitor;public DeviceController(UserRepository u,SecurityMonitoringService m){users=u;monitor=m;}@GetMapping public Object list(Authentication a){return monitor.deviceList(users.findByEmail(a.getName()).orElseThrow());}}
